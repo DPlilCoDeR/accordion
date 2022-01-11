@@ -6,26 +6,31 @@ const Question = ({question}) => {
     
     if (!seeReply) {
         return (
-        <>
-            <h4>{title}</h4>
-            <button onClick={() => setSeeReply(!seeReply)}>
+        <section className='question'>
+            <header>
+                <h4>{title}</h4>
+            </header>
+
+            <button className='btn' onClick={() => setSeeReply(!seeReply)}>
                 {
                     seeReply ? <AiOutlineMinus/> : <AiOutlinePlus/>
                 }
             </button>
-        </>
+        </section>
         )
     }
     return (
-        <section>
-            <h4>{title}</h4>
-            <button onClick={() => setSeeReply(!seeReply)}>
-                {
-                    seeReply ? <AiOutlineMinus/> : <AiOutlinePlus/>
-                }
-            </button>
-            <p>{info}</p>
-        </section>
+            <section className='question'>
+                <header>
+                    <h4>{title}</h4>
+                </header>
+                <button className='btn' onClick={() => setSeeReply(!seeReply)}>
+                    {
+                        seeReply ? <AiOutlineMinus/> : <AiOutlinePlus/>
+                    }
+                </button>
+                <p>{info}</p>
+            </section>
         );
 };
 
